@@ -1,2 +1,7 @@
 *.vcxproj
 Euler.vcxproj.filters
+*.obj
+*.tlog
+Debug/Euler.log
+*.idb
+*.pdb
