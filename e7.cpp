@@ -1,4 +1,4 @@
-
+/*
 #include <iostream>
 #include <vector>
 #include <chrono>
@@ -7,7 +7,7 @@ int main() {
 	auto t = std::chrono::high_resolution_clock::now();
 
 	std::vector<int> primes;
-	primes.reserve(10001);
+	primes.reserve(10002);
 	int prime{ 2 };
 	primes.push_back(prime);
 	
@@ -41,3 +41,4 @@ int main() {
 	system("pause");
 
 }
+*/
