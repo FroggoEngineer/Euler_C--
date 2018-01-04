@@ -13,19 +13,21 @@ int main() {
 	
 	prime = 3;
 	primes.push_back(prime);
+	bool primeNotFound{ true };
 
 	while (primes.size() < 10001) {
-		bool primeNotFound{ true };
+		primeNotFound = true;
 		while (primeNotFound) {
 
 			prime += 2;
+			double sqPrime = sqrt(prime);
 			for (int i{ 0 }; i < primes.size(); ++i) {
 				primeNotFound = false;
 				if (prime % primes[i] == 0) { //Check only towards previous primes
 					primeNotFound = true;
 					break;
 				}
-				else if (primes[i] >= sqrt(prime)) { //If primes are bigger or equal to square root of the number, break
+				else if (primes[i] >= sqPrime) { //If primes are bigger or equal to square root of the number, break
 					break;
 				}
 
