@@ -2,12 +2,15 @@
 //Using a cache system to speed up checks
 /*
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <cassert>
 #include <string>
+#include <chrono>
 
 int main() {
-	std::map<std::string, int> cache;
+	auto t = std::chrono::high_resolution_clock::now();
+
+	std::unordered_map<std::string, int> cache;
 	__int64 num{ 0 };		//64bit integers required due to size of numbers handled in the algorithm
 	__int64 prevNum{ 0 };
 	int counter{ 0 };
@@ -18,7 +21,7 @@ int main() {
 		prevNum = num;
 		while (num != 1) {
 			//Check if number is in cache
-			std::map<std::string, int>::iterator it = cache.find(std::to_string(num));
+			std::unordered_map<std::string, int>::iterator it = cache.find(std::to_string(num));
 			
 			//If found: add length to counter and add to previous number
 			if (it != cache.end()) {
@@ -55,6 +58,11 @@ int main() {
 		}
 		counter = 0;
 	}
+
+	auto endt = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsedTime = endt - t;
+
+	std::cout << elapsedTime.count() << "ms" << std::endl;
 
 	std::cout << "Longest sequence: " << longest << " with starter: " << longNum << std::endl;
 	system("pause");
