@@ -5,3 +5,4 @@ Euler.vcxproj.filters
 Debug/Euler.log
 *.idb
 *.pdb
+*.log
